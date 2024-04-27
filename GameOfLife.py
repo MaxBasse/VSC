@@ -49,61 +49,7 @@ class Tile:
 
     def __str__(self):
         return f"x: {self.x} y: {self.y} status: {self.status}"
-        
-    ###with loops
-    """def nbNeigborsAlive(self):
-        if(self.y == 0):
-            if(self.x==0):
-                return self.grid.tiles[1][0].getAlive() + self.grid.tiles[1][1].getAlive() + self.grid.tiles[0][1].getAlive()
-            elif(self.x==size):
-                return self.grid.tiles[size-1][0].getAlive() + self.grid.tiles[size-1][1].getAlive() + self.grid.tiles[size][1].getAlive()
-            else:
-                res: int = 0
-                for row in [row[self.y:self.y+2] for row in self.grid.tiles[self.x-1:self.x+2]]:
-                    for tile in row:
-                        res += tile.getAlive()
-                res -= self.getAlive()
-                return res
-            
-        elif(self.x == 0):
-            if(self.y==size):
-                return self.grid.tiles[0][size-1].getAlive() + self.grid.tiles[1][size-1].getAlive() + self.grid.tiles[1][size].getAlive()
-            else:
-                res: int = 0
-                for row in [row[self.y-1:self.y+2] for row in self.grid.tiles[self.x:self.x+2]]:
-                    for tile in row:
-                        res += tile.getAlive()
-                res -= self.getAlive()
-                return res
-            
-        elif(self.x == size):
-            if(self.y==size):
-                return self.grid.tiles[size-1][size].getAlive() + self.grid.tiles[size-1][size-1].getAlive() + self.grid.tiles[size][size-1].getAlive()
-            else:
-                res: int = 0
-                for row in [row[self.y-1:self.y+2] for row in self.grid.tiles[self.x-1:self.x+1]]:
-                    for tile in row:
-                        res += tile.getAlive()
-                res -= self.getAlive()
-                return res
-            
-        elif(self.y == size):
-            res: int = 0
-            for row in [row[self.y-1:self.y+1] for row in self.grid.tiles[self.x-1:self.x+2]]:
-                for tile in row:
-                    res += tile.getAlive()
-            res -= self.getAlive()
-            return res
-        
-        else: 
-            res: int = 0
-            for row in [row[self.y-1:self.y+2] for row in self.grid.tiles[self.x-1:self.x+2]]:
-                for tile in row:
-                    res += tile.getAlive()
-            res -= self.getAlive()
-            return res"""
     
-    ###with "coordinates"
     def nbNeigborsAlive(self):
         if(self.y == 0):
             if(self.x==0):
@@ -139,7 +85,6 @@ class Tile:
                   + self.grid.tiles[self.x-1][self.y].getAlive() + self.grid.tiles[self.x+1][self.y].getAlive()
                   + self.grid.tiles[self.x-1][self.y+1].getAlive() + self.grid.tiles[self.x][self.y+1].getAlive() + self.grid.tiles[self.x+1][self.y+1].getAlive())
 
-
     def getAlive(self):
         return self.status
     
@@ -154,53 +99,8 @@ class Tile:
             for tile in row:
                 print(tile)
 
-
 grid = Grid(size)
 grid.addPattern('GGG', 10, 10)
-
-##Glider
-"""grid.updateTile(4,10,1)
-grid.updateTile(4,11,1)
-grid.updateTile(5,10,1)
-grid.updateTile(5,11,1)
-
-grid.updateTile(14,10,1)
-grid.updateTile(14,11,1)
-grid.updateTile(14,12,1)
-grid.updateTile(15,13,1)
-grid.updateTile(16,14,1)
-grid.updateTile(17,14,1)
-grid.updateTile(15,9,1)
-grid.updateTile(16,8,1)
-grid.updateTile(17,8,1)
-
-grid.updateTile(18,11,1)
-
-grid.updateTile(19,9,1)
-grid.updateTile(19,13,1)
-grid.updateTile(20,10,1)
-grid.updateTile(20,11,1)
-grid.updateTile(20,12,1)
-grid.updateTile(21,11,1)
-
-grid.updateTile(24,10,1)
-grid.updateTile(24,9,1)
-grid.updateTile(24,8,1)
-grid.updateTile(25,10,1)
-grid.updateTile(25,9,1)
-grid.updateTile(25,8,1)
-grid.updateTile(26,7,1)
-grid.updateTile(26,11,1)
-grid.updateTile(28,7,1)
-grid.updateTile(28,11,1)
-grid.updateTile(28,6,1)
-grid.updateTile(28,12,1)
-
-grid.updateTile(38,9,1)
-grid.updateTile(38,8,1)
-grid.updateTile(39,9,1)
-grid.updateTile(39,8,1)"""
-
 
 #update method for the plot
 while True:

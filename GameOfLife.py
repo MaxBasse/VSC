@@ -5,9 +5,8 @@ import json
 fig, ax = plt.subplots()
 size = 100
 it: int = 0
-delay = 0.01  
+delay = 0.1  
 patterns = json.load(open('patterns.json'))
-
 
 ##Structuring class for the grid
 class Grid:
@@ -103,15 +102,14 @@ class Tile:
 grid = Grid(size)
 grid.addPattern('GGG', 10, 10)
 
-
 #update method for the plot
 while True:
     it += 1
     ax.clear() 
     ax.imshow(grid.dataDisplay())
     grid = grid.step()
-    plt.title(f'Iteration n°{it}')
     plt.pause(delay)
+    
 
 
 

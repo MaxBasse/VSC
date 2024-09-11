@@ -3,4 +3,4 @@
 ## Game of Life 
 
 Made in Python, uses MatPlotLib to display the game, not ideal but simple to use.
-Some basic patterns are in the patterns.json file, code is not optimized but it runs
+Some basic patterns are in the patterns.json file, code is not optimized but it runs (badly).

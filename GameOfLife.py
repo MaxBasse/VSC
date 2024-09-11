@@ -3,9 +3,9 @@ import numpy as np
 import json
 
 fig, ax = plt.subplots()
-size = 100
+size = 1000
 it: int = 0
-delay = 0.1  
+delay = 0.8
 patterns = json.load(open('patterns.json'))
 
 ##Structuring class for the grid
